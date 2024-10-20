@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: #e6f0ff;
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .logo span {
+    background-color: #4169e1;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.sidebar .menu ul,
+.sidebar .others ul {
+    list-style: none;
+}
+
+.sidebar .menu ul li,
+.sidebar .others ul li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.sidebar .menu ul li.active {
+    background-color: #d4e3ff;
+}
+
+.sidebar .menu ul li span {
+    display: block;
+    padding: 10px;
+}
+
+.sidebar .others ul li {
+    color: #777;
+    font-size: 14px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+}
+
+header .profile {
+    display: flex;
+    align-items: center;
+}
+
+header .profile span {
+    margin-right: 10px;
+}
+
+header .profile .profile-icon {
+    background-color: #ffd966;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.staff-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.staff-list h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+table th {
+    font-weight: bold;
+}
+
+table td {
+    font-size: 14px;
+    color: #555;
+}
+
+.action-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-icon,
+.delete-icon {
+    background-color: #4169e1;
+    color: white;
+    padding: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-icon {
+    background-color: #ff6666;
+}
+
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff List</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <span>K</span>
+                <h2>Payroll Module</h2>
+            </div>
+            <nav class="menu">
+                <ul>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="staff_list.html">Staff List</a></li>
+                <li><a href="payroll.html">Payroll</a></li>
+                <li class="others-header">Others</li>
+                </ul>
+            </nav>
+            <div class="others">
+                <ul>
+                    <li>Settings</li>
+                    <li>Accounts</li>
+                    <li>Help</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main>
+            <header>
+                <input type="text" placeholder="Search">
+                <div class="profile">
+                    <span>Jessica</span>
+                    <div class="profile-icon"></div>
+                </div>
+            </header>
+
+            <section class="staff-list">
+                <h2>Staff List</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone Number</th>
+                            <th>ID</th>
+                            <th>Address</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>0200000000</td>
+                            <td>PMS439023</td>
+                            <td>Madina, Accra Ghana</td>
+                            <td>
+                                <span class="action-icons">
+                                    <i class="edit-icon"></i>
+                                    <i class="delete-icon"></i>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

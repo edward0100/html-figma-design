@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9; 
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #f3f4f6;
+            padding: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .logo span {
+            font-size: 2rem;
+            background-color: #5662F6;
+            color: white;
+            border-radius: 50%;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 10px;
+            padding-top: 10px;
+        }
+
+        .menu li {
+            padding-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu li a.active {
+            font-weight: bold;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topbar input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .dropdown {
+            margin-left: 10px;
+        }
+
+        .flexbox {
+            background-color: #f4f4f9; 
+            padding: 20px;
+            margin: 0; 
+            border: none; 
+            box-shadow: none; 
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start; 
+            justify-content: space-between;
+        }
+
+        .flexbox-1 {
+            flex: 0 0 60%; 
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start; 
+            justify-content: space-between; 
+        }
+
+        .flexbox-2 {
+            flex: 0 0 40%; 
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .flexbox-3, .flexbox-4, .flexbox-5 {
+            flex: 0 0 40%; 
+        }
+
+        .view-report-button {
+            align-self: flex-end; 
+            background-color: white; 
+            color: #5662F6; 
+            border: 1px solid #5662F6; 
+            border-radius: 5px; 
+            padding: 5px 5px 5px; 
+            cursor: pointer; 
+            margin-bottom: 0px; 
+            margin-top: 0px;
+        }
+
+        .chart-container {
+            width: 100%; 
+            height: auto;
+            margin-top: 40px; 
+        }
+        
+        .realer {
+            color:#5e5858;
+        }
+
+        .rating-circle {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: #035bff;
+            color: rgb(255, 255, 255);
+            border-radius: 50%;
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            margin-right: 10px;
+        }
+
+        .percent-change {
+            color: green;
+        }
+
+        .percent-change.down {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <span>K</span>
+                <h2>Payroll Module</h2>
+            </div>
+            <ul class="menu">
+                <p>Menu</p>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="staff_list.html">Staff List</a></li>
+                <li><a href="payroll.html">Payroll</a></li>
+                <li class="others-header">Others</li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Accounts</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+            <header class="topbar">
+                <input type="text" placeholder="Search">
+                <div class="user-info">
+                    <img src="https://imgs.search.brave.com/q5Q5vQxr82plOaQbeXHYLXJ_VgwEzBRl5pSxt7ZUAlY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL1Mv/cHYtdGFyZ2V0LWlt/YWdlcy9lZDlhYjYy/NmVjNzFjNmYwOTM1/MmU0YTViZjE1ODA1/NGE0NGU0NTA3NjRi/YTFjYjc3MmIzZTFl/MmZlZjcyYjZhLmpw/Zw" alt="Jessica's Profile" class="profile-pic">
+                    <span>Jessica</span>
+                    <div class="dropdown">
+                        <span>&#9662;</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="dashboard-section">
+                <div class="row">
+                    <div class="flexbox flexbox-1">
+                        <h4>Dashboard</h4>
+                        <button class="view-report-button">View Report</button>
+                        <div class="revenue-box">
+                            <p>Revenue</p>
+                            <h3>GHC 7.852.000</h3>
+                            <p class="percent-change">↑ 2.1% vs last week</p>
+                            <p>Revenue from 1-12 Sep, 2024</p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="flexbox flexbox-2">
+                        <h4>Deywuro Revenue</h4>
+                        <button class="view-report-button">View Report</button>
+                        <canvas id="doughnutChart"></canvas>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" flexbox flexbox-3">
+                        <h4>Your Rating</h4>
+                        <p class="realer">Lorem ipsum dolor sit amet , consectetur</p>
+                        <div class="ratings">
+                            <div class="rating-circle">
+                                <span>85%</span>
+                                <p>Deywuro</p>
+                            </div>
+                            <div class="rating-circle">
+                                <span>85%</span>
+                                <p>Kedebah</p>
+                            </div>
+                            <div class="rating-circle">
+                                <span>92%</span>
+                                <p>Npontu Building</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" flexbox flexbox-4">
+                        <h4>Most Revenue Generated Products</h4>
+                        <p class="realer"> Adipiscing elit, sed do eiusmond tempor</p>
+                        <ul class="product-list">
+                              <li>
+                                <img src="realer.jpg">
+                                <span class="product-name">Deywuro</span>
+                                <span class="product-price">GHC 45,000</span>
+                              </li>
+                            <li>
+                                <img src="realer.jpg">
+                                <span class="product-name">Kedebah</span>
+                                <span class="product-price">GHC 75,000</span>
+                            </li>
+                            <li>
+                                <img src="realer.jpg">
+                                <span class="product-name">Npontu Building</span>
+                                <span class="product-price">GHC 45,000</span>
+                            </li>
+                            <li>
+                                <img src="realer.jpg">
+                                <span class="product-name">Rooftop</span>
+                                <span class="product-price">GHC 45,000</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flexbox flexbox-5">
+                        <h4>Order</h4>
+                        <button class="view-report-button">View Report</button>
+                        <p>2,568</p>
+                        <p class="percent-change down">↓ 2.1% vs last week</p>
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="charts.js"></script>
+</body>
+</html>
